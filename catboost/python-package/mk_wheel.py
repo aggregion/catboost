@@ -319,7 +319,7 @@ def build(arc_root, out_root, tail_args, should_build_widget):
             if should_build_widget:
                 build_widget(arc_root)
             wheel_name = os.path.join(py_trait.arc_root, 'catboost', 'python-package',
-                                      '{}-{}-{}-none-{}.whl'.format(pkg_name, ver, py_trait.lang, py_trait.platform))
+                                      '{}-{}-{}-none-{}.whl'.format(pkg_name, ver, py_trait.lang, 'any'))
             make_wheel(wheel_name, pkg_name, ver, arc_root, dst_so_modules, should_build_widget)
             os.remove(dst)
             return wheel_name

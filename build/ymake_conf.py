@@ -523,7 +523,7 @@ class Build(object):
         elif self.build_system != 'ymake':
             raise ConfigureError()
 
-        python_bin = preset('BUILD_PYTHON_BIN', '$(PYTHON)/python')
+        python_bin = '/usr/bin/python3' #preset('BUILD_PYTHON_BIN', '$(PYTHON)/python')
 
         emit('YMAKE_PYTHON', python_bin)
         emit('YMAKE_UNPICKLER', python_bin, '$ARCADIA_ROOT/build/plugins/_unpickler.py')

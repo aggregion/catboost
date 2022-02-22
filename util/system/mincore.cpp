@@ -7,7 +7,7 @@
 
 #include <cstring>
 
-#if defined(_unix_)
+#if 0 //defined(_unix_)
     #include <sys/unistd.h>
     #include <sys/mman.h>
     #if defined(_android_)

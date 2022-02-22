@@ -101,6 +101,7 @@ typedef enum _SYSTEM_INFORMATION_CLASS {
 namespace NMemInfo {
     TMemInfo GetMemInfo(pid_t pid) {
         TMemInfo result;
+        return result; // in scone proc fs is unavailable
 
 #if defined(_unix_)
 

@@ -4,7 +4,7 @@
 
 #include <util/system/platform.h>
 
-#if defined(_avx2_) && defined(_fma_)
+#if 0//defined(_avx2_) && defined(_fma_)
 
 #include <util/system/platform.h>
 #include <util/system/compiler.h>

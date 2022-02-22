@@ -30,7 +30,7 @@ void AddLangevinNoiseToDerivatives(
     const double coef = CalcLangevinNoiseRate(diffusionTemperature, learningRate);
     CB_ENSURE_INTERNAL(!derivatives->empty(), "Unexpected empty derivatives");
     const size_t objectCount = derivatives->size();
-    TSimpleIndexRangesGenerator<size_t> rangesGenerator(TIndexRange(objectCount), CB_THREAD_LIMIT);
+    TSimpleIndexRangesGenerator<size_t> rangesGenerator(TIndexRange<size_t>(objectCount), CB_THREAD_LIMIT);
 
     localExecutor->ExecRange(
         [&](int blockIdx) {
@@ -59,7 +59,7 @@ void AddLangevinNoiseToDerivatives(
     const double coef = CalcLangevinNoiseRate(diffusionTemperature, learningRate);
     CB_ENSURE_INTERNAL(!derivatives->empty(), "Unexpected empty derivatives");
     const size_t objectCount = derivatives->front().size();
-    TSimpleIndexRangesGenerator<size_t> rangesGenerator(TIndexRange(objectCount), CB_THREAD_LIMIT);
+    TSimpleIndexRangesGenerator<size_t> rangesGenerator(TIndexRange<size_t>(objectCount), CB_THREAD_LIMIT);
     for(auto& derivatives1d : *derivatives) {
         localExecutor->ExecRange(
             [&](int blockIdx) {

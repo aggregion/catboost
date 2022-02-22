@@ -12,7 +12,6 @@ Platform: Mac OSX
 Platform: Windows
 Platform: Unix
 Requires-Dist: graphviz
-Requires-Dist: matplotlib
 Requires-Dist: numpy >=1.16.0
 Requires-Dist: pandas >=0.24.0
 Requires-Dist: scipy

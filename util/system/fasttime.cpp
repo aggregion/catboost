@@ -36,7 +36,7 @@ namespace {
             // not DEFAULT, cause library/cpp/gettimeofday
             Func = reinterpret_cast<TFunc>(dlsym(RTLD_NEXT, "gettimeofday"));
 
-    #if defined(_musl_)
+    #if 0 //defined(_musl_)
             if (!Func) {
                 Func = reinterpret_cast<TFunc>(NVdso::Function("__vdso_gettimeofday", "LINUX_2.6"));
             }

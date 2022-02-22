@@ -405,7 +405,7 @@ locale::operator()(const basic_string<_CharT, _Traits, _Allocator>& __x,
 class _LIBCPP_TYPE_VIS ctype_base
 {
 public:
-#if defined(_LIBCPP_PROVIDES_DEFAULT_RUNE_TABLE)
+#if 1//defined(_LIBCPP_PROVIDES_DEFAULT_RUNE_TABLE)
     typedef unsigned long mask;
     static const mask space  = 1<<0;
     static const mask print  = 1<<1;

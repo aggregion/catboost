@@ -19,7 +19,7 @@
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-#if _LIBCPP_STD_VER > 17
+#if 0//_LIBCPP_STD_VER > 17
 
 template<class _ToType, class _FromType, class = enable_if_t<
   sizeof(_ToType) == sizeof(_FromType) &&

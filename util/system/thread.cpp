@@ -10,7 +10,7 @@
 #include <utility>
 
 #if defined(_glibc_)
-    #if !__GLIBC_PREREQ(2, 30)
+    #if 0//!__GLIBC_PREREQ(2, 30)
         #include <sys/syscall.h>
     #endif
 #endif
@@ -18,6 +18,7 @@
 #if defined(_unix_)
     #include <pthread.h>
     #include <sys/types.h>
+    #include <sys/syscall.h>
 #elif defined(_win_)
     #include "dynlib.h"
     #include <util/charset/wide.h>
@@ -339,9 +340,9 @@ TThread::TId TThread::CurrentThreadNumericId() noexcept {
     return threadId;
 #elif defined(_musl_) || defined(_bionic_)
     // both musl and android libc provide gettid() function
-    return gettid();
+    return syscall(SYS_gettid);
 #elif defined(_glibc_)
-    #if __GLIBC_PREREQ(2, 30)
+    #if 0//__GLIBC_PREREQ(2, 30)
     return gettid();
     #else
     // gettid() was introduced in glibc=2.30, previous versions lack neat syscall wrapper

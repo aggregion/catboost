@@ -31,8 +31,6 @@
 #define RPP_SEVENBIT    0x10		/* Strip the high bit from input. */
 #define RPP_STDIN       0x20		/* Read from stdin, not /dev/tty */
 
-#include <sys/cdefs.h>
-
 #ifdef __cplusplus
 extern "C" {
 #endif
